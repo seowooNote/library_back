@@ -27,9 +27,14 @@ public class AdminBookController {
         return ResponseEntity.created(null).body(true);
     }
 
-    @ParamsPrintAspect
+    // @ParamsPrintAspect
     @GetMapping("/books")
     public ResponseEntity<?> searchBooks(SearchBookReqDto searchBookReqDto) {
         return ResponseEntity.ok(bookService.searchBooks(searchBookReqDto));
+    }
+
+    @GetMapping("/books/count")
+    public ResponseEntity<?> getCount(SearchBookReqDto searchBookReqDto) {
+        return ResponseEntity.ok(bookService.getBookCount(searchBookReqDto));
     }
 }
