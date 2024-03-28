@@ -23,4 +23,8 @@ public interface BookMapper {
             @Param("searchTypeId") int searchTypeId,
             @Param("searchText") String searchText
     );
+
+    public int deleteBooksByBookIds(List<Integer> bookIds);
+
+    public int updateBookByBookId(Book book);
 }
